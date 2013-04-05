@@ -9,3 +9,10 @@ So I became a developer of Craftitude. Now what?
 6. For ideal comfort, install a good environment where you can program in C#. I use VS 2012, MonoDevelop and SharpDevelop would work too with the client api code.
 7. You need either Mono 3.x (compile it from [their repository](https://github.com/mono/mono) if needed) or .NET Framework 4.0 Client Profile and Full installed.
 8. Happy coding!
+
+If you don't know how git works, you better google it up.
+
+For what do I need the SSH key?
+===============================
+
+You need the SSH key loaded into your git client as soon as you want to push commits to the repository. It identifies you as the one who you are securely.
