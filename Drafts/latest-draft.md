@@ -18,11 +18,11 @@ Filesystem Tree
 				[DIR] <version>
 					[FILE] metadata.yml
 					[DIR] <platform: windows/macosx/solaris/linux>
-						[FILE] instructions
+						[FILE] instructions.lua
 				[DIR] <version>
 					[FILE] metadata.yml
 					[DIR] <platform>
-						[FILE] instructions
+						[FILE] instructions.lua
 				...
 			[DIR] <platform-independent package name>
 				[DIR] <version>
