@@ -1,5 +1,5 @@
 ﻿# Craftitude Repository Documentation
-Gist Draft *Apr 05 2013, Version 0.3c*
+Gist Draft *Apr 05 2013, Version 0.4a*
 by Icedream (Carl Kittelberger)
 
 Filesystem Tree
