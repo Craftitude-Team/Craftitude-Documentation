@@ -311,7 +311,7 @@ function Install()
 	var archive = GetResolver("archive", { input = download })
 	 
 	-- Install JAR into "mods" folder
-	archive:InjectTo("mods/thisisamod.jar")
+	archive:InjectAllTo("mods/thisisamod.jar")
 end
 
 -- Uninstalls the mod
@@ -347,8 +347,7 @@ Functions available after construction:
 #### Archive resolver (``archive``)
 [Subject to be changed without notice.]
 
-The archive resolver enables a script to convert content into a usable Archive instance, for example to extract ZIP
-files.
+The archive resolver enables a script to use an archive.
 
 Entries are in the syntax ``folder/folder2/file``. This means there is no root slash and the directory seperation char
 is "/" (unix-style).
@@ -367,9 +366,9 @@ Functions available after construction:
   overwrites any already existing files.
 - Extract(entry, filepath): Extracts a single entry to the specified file path. Note: This overwrites any already existing
   files.
-- InjectAll(filepath[, filter]): Writes all files contained in the archive into the archive file located at the
+- InjectAllTo(filepath[, filter]): Writes all files contained in the archive into the archive file located at the
   specified target path. Note: This does not _overwrite_ the file, but adds/overwrites the _entry within the archive file_.
-- Inject(entry, filepath): Writes a single entry contained in the archive into the archive file located at the specified
+- InjectTo(entry, filepath): Writes a single entry contained in the archive into the archive file located at the specified
   target path. Note: This does not _overwrite_ te file, but adds/overwrites the _entry within the archive file_.
 - GetEntryList(): Outputs a string array containing all available entries.
 
