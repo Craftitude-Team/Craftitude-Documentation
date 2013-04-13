@@ -1,4 +1,4 @@
-﻿# Craftitude Repository Documentation
+# Craftitude Repository Documentation
 Gist Draft *Mar 31 2013, Version 0.3b*
 by Icedream (Carl Kittelberger)
 

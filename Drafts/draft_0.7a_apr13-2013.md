@@ -1,4 +1,4 @@
-﻿# Craftitude Repository Documentation
+# Craftitude Repository Documentation
 Git Draft *Apr 13 2013, Version 0.7a*
 by Icedream (Carl Kittelberger)
 
