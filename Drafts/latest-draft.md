@@ -41,9 +41,9 @@ The ``packages.yml`` file is a YAML-compatible file. It's contents are:
 
 - The current repository version (a number)
 - All packages in the current repository
-	o Package metadata
-	o Available version IDs
-	o Reference to most current version ID
+	- Package metadata
+	- Available version IDs
+	- Reference to most current version ID
 
 Note: ``packages.yml.gz`` is a GZIP-compressed copy or mirror of this file.
 Note: ``packages.yml.bz`` is a BZIP2-compressed copy or mirror of this file.
@@ -103,6 +103,7 @@ The following explains the specific parts of a package's metadata further:
 Defines the title or name of a package.
 
 Limitations:
+
 - Is a string.
 - Must be a single line.
 - Must contain min. 3 characters and max. 128 characters.
@@ -113,6 +114,7 @@ Limitations:
 Defines the description of a package.
 
 Limitations:
+
 - Is a string.
 - Can be multiline.
 - Maximum length is 2048 characters.
@@ -123,6 +125,7 @@ Limitations:
 Defines a list of people which maintain the package in the current repository.
 
 Limitations:
+
 - Is a list of strings.
 - Must contain at least 1 (one) entry.
 - No maximum length.
@@ -133,6 +136,7 @@ Limitations:
 Defines a list of people which develop the package's content (for example the mod itself).
 
 Limitations:
+
 - Is a list of strings.
 - If defined, should at contain at least 1 (one) entry.
 - No maximum length.
@@ -144,6 +148,7 @@ Defines the license under which the package or - more exact - the package's cont
 Can be defined as URL to a license, the name of a license or the text of a license.
 
 Limitations:
+
 - Should contain at least one of its subcomponents, if defined. The more subcomponents defined,
   the better a license is described.
 - Is _recommended_ to be included (see above).
@@ -153,6 +158,7 @@ Limitations:
 The license's name.
 
 Limitations:
+
 - Is a string
 - Should contain max. 128 chars.
 
@@ -161,6 +167,7 @@ Limitations:
 The license's URL.
 
 Limitations:
+
 - Is a string
 - Should contain max. 256 chars.
 
@@ -169,6 +176,7 @@ Limitations:
 The license's text.
 
 Limitations:
+
 - Is a string
 - Should contain max. 8192 chars.
 - Is _not recommended_ to be included; instead use Name/URL if possible.
@@ -186,6 +194,7 @@ is an own entry:
 - Unix/Linux: Keyword is "linux".
 
 Limitations:
+
 - Is a list of strings.
 - Only values to be recognized by the client are "all" and listed keywords above.
 - Is _required_ to be included.
@@ -253,6 +262,7 @@ They tell the client how to handle the contents of a package to install or unins
 by giving it instructions. Those instructions are given in form of a LUA script.
 
 The client differences between two instruction types:
+
 - Install (for installing packages)
 - Uninstall (for uninstalling packages)
 
@@ -281,11 +291,12 @@ basic LUA features available in each standard LUA script:
 	Fetches a resolver by its name. "parameters" is a hashtable.
 
 All resolvers will have these functions:
-- ToStream()
+
+- ToStream():
 	Resolves to a stream.
-- ToArchive()
+- ToArchive():
 	Resolves to an archive, this is usally the function you want to call with the last resolver.
-- ToString()
+- ToString():
 	Resolves to a text.
 
 Simple example of a typical fully working instruction set.
@@ -323,9 +334,11 @@ Following resolvers are available:
 The download resolver enables a script to download a file, usually a ZIP or JAR file (the same) to later access it.
 
 Parameters for GetResolver:
+
 - "url": Specifies the URL from which to download.
 
 Functions available after construction:
+
 - ToStream(): Outputs the content of the download as a stream (see C# documentation).
 - ToString(): Outputs the content of the download as a string.
 - GetUrl(): Outputs the origin URL as a string.
@@ -341,12 +354,15 @@ Entries are in the syntax ``folder/folder2/file``. This means there is no root s
 is "/" (unix-style).
 
 Parameters for GetResolver:
+
 - "input": The stream/download resolver to convert.
 
 Properties available after construction:
+
 - "IgnoreMetaInf": Ignore the META-INF folder in JAR files. Default is "false".
 
 Functions available after construction:
+
 - ExtractAll(folderpath[, filter]): Extracts all contents (or filtered out content) to the specified target path. Note: This
   overwrites any already existing files.
 - Extract(entry, filepath): Extracts a single entry to the specified file path. Note: This overwrites any already existing
@@ -364,12 +380,15 @@ The mediafire resolver enables a script to directly download files from mediafir
 pages, as the backend will do all the dirty work.
 
 Parameters for GetResolver:
+
 - "id": The ID of the download on mediafire.
 
 Properties available after construction:
+
 - "UseContentForString": Don't output the URL via ToString, instead use the download content.
 
 Functions available after construction:
+
 - ToString(): Outputs either the URL or the content as a string, depending on "UseContentForString" property.
 - ToStream(): Outputs the content as a stream.
 
